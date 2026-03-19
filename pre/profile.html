@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Profile - Netflix Clone</title>
+  <link rel="stylesheet" href="profile-style.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+</head>
+<body>
+  <div class="profile-container">
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="navbar-brand">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
+          alt="Netflix image"
+          class="logo"
+        />
+      </div>
+      <div class="navbar-nav">
+        <a href="index.html" class="nav-link">Back to Home</a>
+      </div>
+    </nav>
+
+    <!-- Profile Content -->
+    <main class="profile-content">
+      <div class="profile-header">
+        <div class="profile-avatar">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
+            alt="Profile Avatar"
+          />
+        </div>
+        <div class="profile-info">
+          <h1 id="profile-name">User Name</h1>
+          <p id="profile-email">user@email.com</p>
+          <p class="profile-joined">Member since <span id="member-date">2024</span></p>
+        </div>
+      </div>
+
+      <!-- Profile Sections -->
+      <div class="profile-sections">
+        <!-- Account Settings -->
+        <section class="profile-section">
+          <h2>Account Settings</h2>
+          <div class="settings-list">
+            <div class="setting-item">
+              <label>Email Address</label>
+              <input type="email" id="email-setting" readonly />
+            </div>
+            <div class="setting-item">
+              <label>Full Name</label>
+              <input type="text" id="name-setting" readonly />
+            </div>
+            <div class="setting-item">
+              <label>Plan Type</label>
+              <select>
+                <option>Premium - $15.99/month</option>
+                <option>Standard - $12.99/month</option>
+                <option>Basic - $9.99/month</option>
+              </select>
+            </div>
+          </div>
+        </section>
+
+        <!-- My List -->
+        <section class="profile-section">
+          <h2>My List</h2>
+          <div class="mylist-container">
+            <div id="mylist-content">
+              <p class="empty-message">Your list is empty. Start adding content!</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Viewing History -->
+        <section class="profile-section">
+          <h2>Viewing History</h2>
+          <div class="history-container">
+            <p class="empty-message">No viewing history yet.</p>
+            <button class="btn btn-clear">Clear History</button>
+          </div>
+        </section>
+
+        <!-- Preferences -->
+        <section class="profile-section">
+          <h2>Preferences</h2>
+          <div class="preferences-list">
+            <div class="preference-item">
+              <label>
+                <input type="checkbox" id="auto-play" checked />
+                Autoplay next episode
+              </label>
+            </div>
+            <div class="preference-item">
+              <label>
+                <input type="checkbox" id="notifications" checked />
+                Enable notifications
+              </label>
+            </div>
+            <div class="preference-item">
+              <label>
+                <input type="checkbox" id="hd-streaming" checked />
+                HD Streaming (requires better internet)
+              </label>
+            </div>
+            <div class="preference-item">
+              <label>
+                Download Quality:
+                <select>
+                  <option>Highest (HD)</option>
+                  <option>Medium (SD)</option>
+                  <option>Low (Mobile)</option>
+                </select>
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <!-- Devices -->
+        <section class="profile-section">
+          <h2>Devices</h2>
+          <div class="devices-list">
+            <div class="device-item">
+              <i class="fas fa-desktop"></i>
+              <div class="device-info">
+                <h3>Windows PC</h3>
+                <p>Last active: Today</p>
+              </div>
+              <button class="btn btn-small">Remove</button>
+            </div>
+            <div class="device-item">
+              <i class="fas fa-mobile-alt"></i>
+              <div class="device-info">
+                <h3>Mobile Phone</h3>
+                <p>Last active: 2 days ago</p>
+              </div>
+              <button class="btn btn-small">Remove</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Security -->
+        <section class="profile-section">
+          <h2>Security</h2>
+          <div class="security-list">
+            <div class="security-item">
+              <h3>Password</h3>
+              <p>Last changed: 3 months ago</p>
+              <button class="btn btn-small">Change Password</button>
+            </div>
+            <div class="security-item">
+              <h3>Two-Factor Authentication</h3>
+              <p>Protect your account with 2FA</p>
+              <button class="btn btn-small">Enable 2FA</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Danger Zone -->
+        <section class="profile-section danger-zone">
+          <h2>Account Actions</h2>
+          <div class="action-buttons">
+            <button class="btn btn-danger" id="logout-btn">Log Out</button>
+            <button class="btn btn-danger" id="delete-btn">Delete Account</button>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>&copy; 2024 Netflix Clone. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script src="profile-script.js"></script>
+</body>
+</html>
