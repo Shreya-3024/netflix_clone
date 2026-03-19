@@ -1,0 +1,394 @@
+﻿/* Login Page Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background-color: #141414;
+  color: #fff;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Background */
+.login-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #141414 0%, #0a0a0a 100%);
+  z-index: -1;
+}
+
+.netflix-logo-login {
+  position: absolute;
+  top: 30px;
+  left: 60px;
+  z-index: 100;
+}
+
+.netflix-logo-login img {
+  height: 35px;
+  cursor: pointer;
+}
+
+/* Login Content */
+.login-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px 20px;
+  z-index: 1;
+}
+
+.login-form-container {
+  width: 100%;
+  max-width: 450px;
+  background: rgba(20, 20, 20, 0.9);
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(229, 9, 20, 0.2);
+}
+
+/* Tabs */
+.login-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 15px;
+}
+
+.tab-btn {
+  background: transparent;
+  border: none;
+  color: #aaa;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 15px;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.tab-btn.active {
+  color: #e50914;
+}
+
+.tab-btn.active::after {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #e50914;
+}
+
+.tab-btn:hover {
+  color: #fff;
+}
+
+/* Forms */
+.login-form {
+  display: none;
+  animation: fadeIn 0.4s ease-out;
+}
+
+.login-form.active-form {
+  display: block;
+}
+
+.login-form h1 {
+  font-size: 28px;
+  margin-bottom: 25px;
+  text-align: left;
+  font-weight: 700;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Form Groups */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #e5e5e5;
+}
+
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="text"] {
+  width: 100%;
+  padding: 12px 15px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  color: #fff;
+  font-size: 14px;
+  transition: all 0.3s;
+}
+
+.form-group input[type="email"]:focus,
+.form-group input[type="password"]:focus,
+.form-group input[type="text"]:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.15);
+  border-color: #e50914;
+  box-shadow: 0 0 10px rgba(229, 9, 20, 0.3);
+}
+
+.form-group input::placeholder {
+  color: #888;
+}
+
+/* Checkbox & Remember Me */
+.form-remember {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  font-size: 13px;
+}
+
+.form-remember label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  margin: 0;
+}
+
+.form-remember input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #e50914;
+  cursor: pointer;
+}
+
+.form-remember a.forgot-password {
+  color: #e50914;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.form-remember a.forgot-password:hover {
+  color: #ff0a16;
+  text-decoration: underline;
+}
+
+/* Buttons */
+.btn-signin,
+.btn-signup {
+  width: 100%;
+  padding: 12px;
+  background: #e50914;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 20px;
+}
+
+.btn-signin:hover,
+.btn-signup:hover {
+  background: #ff0a16;
+  box-shadow: 0 4px 15px rgba(229, 9, 20, 0.4);
+  transform: translateY(-2px);
+}
+
+.btn-signin:active,
+.btn-signup:active {
+  transform: translateY(0);
+}
+
+/* Links */
+.signup-link,
+.signin-link {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #aaa;
+}
+
+.signup-link a,
+.signin-link a {
+  color: #e50914;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.signup-link a:hover,
+.signin-link a:hover {
+  color: #ff0a16;
+  text-decoration: underline;
+}
+
+/* Social Login */
+.social-login {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.social-login p {
+  color: #aaa;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.social-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.social-btn {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-btn:hover {
+  border-color: #e50914;
+  background: rgba(229, 9, 20, 0.2);
+  transform: scale(1.1);
+}
+
+/* Footer */
+.login-footer {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 30px 20px;
+  text-align: center;
+  border-top: 1px solid #333;
+  z-index: 1;
+}
+
+.login-footer p {
+  color: #aaa;
+  font-size: 13px;
+  margin-bottom: 15px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: #aaa;
+  text-decoration: none;
+  font-size: 12px;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .netflix-logo-login {
+    top: 20px;
+    left: 20px;
+  }
+
+  .netflix-logo-login img {
+    height: 28px;
+  }
+
+  .login-form-container {
+    padding: 30px 20px;
+    max-width: 400px;
+  }
+
+  .login-form h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .login-content {
+    padding: 70px 15px 15px;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+  .form-remember {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-form-container {
+    padding: 25px 15px;
+    border-radius: 4px;
+  }
+
+  .login-form h1 {
+    font-size: 20px;
+  }
+
+  .login-tabs {
+    gap: 5px;
+  }
+
+  .tab-btn {
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+
+  .social-buttons {
+    gap: 10px;
+  }
+
+  .social-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+}
